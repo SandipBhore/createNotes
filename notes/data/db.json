@@ -1,0 +1,40 @@
+{
+  "notes": [
+    {
+      "title": "schedule a meet",
+      "details": "abc",
+      "category": "reminders",
+      "id": 4
+    },
+    {
+      "title": "abcc",
+      "details": "bccc",
+      "category": "money",
+      "id": 5
+    },
+    {
+      "title": "Abc",
+      "details": "xyz",
+      "category": "todos",
+      "id": 6
+    },
+    {
+      "title": "sss",
+      "details": "sssss",
+      "category": "money",
+      "id": 7
+    },
+    {
+      "title": "Titlee",
+      "details": "Desc is waiting for another desc to come, till then you can continue to work on the code you written.",
+      "category": "work",
+      "id": 8
+    },
+    {
+      "title": "dsda",
+      "details": "asdfcdfcd",
+      "category": "reminders",
+      "id": 9
+    }
+  ]
+}
