@@ -3,38 +3,32 @@
     {
       "title": "schedule a meet",
       "details": "abc",
-      "category": "reminders",
-      "id": 4
+      "category": "reminders"
     },
     {
       "title": "abcc",
       "details": "bccc",
-      "category": "money",
-      "id": 5
+      "category": "money"
     },
     {
       "title": "Abc",
       "details": "xyz",
-      "category": "todos",
-      "id": 6
+      "category": "todos"
     },
     {
       "title": "sss",
       "details": "sssss",
-      "category": "money",
-      "id": 7
+      "category": "money"
     },
     {
       "title": "Titlee",
       "details": "Desc is waiting for another desc to come, till then you can continue to work on the code you written.",
-      "category": "work",
-      "id": 8
+      "category": "work"
     },
     {
       "title": "dsda",
       "details": "asdfcdfcd",
-      "category": "reminders",
-      "id": 9
+      "category": "reminders"
     }
   ]
 }

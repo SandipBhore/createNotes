@@ -2,29 +2,33 @@ import { Box, Button, Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import NoteCard from '../components/NoteCard'
 import { useNavigate } from 'react-router-dom';
-// import { Navigate } from 'react-router-dom';
+import Navbar from './navbar.js'
+
 export default function Notes() {
-  const [notes, setNotes] = useState([]);
+  let notes = [];
+  var retrievedObject = JSON.parse(localStorage.getItem('notes'));
 
-  useEffect(() => {
-    fetch('http://localhost:8000/notes')
-      .then(res => res.json())
-      .then(data => setNotes(data))
-  }, [])
-
-  const handleDelete = async (id) => {
-    await fetch('http://localhost:8000/notes/' + id, {
-      method: 'DELETE'
-    })
-    const newNotes = notes.filter(note => note.id != id)
-    setNotes(newNotes)
+  if(localStorage.getItem("notes") !== null){
+    notes=[...retrievedObject]
+  }else{
+    console.log('error')
+  }
+  
+  const handleDelete=(e)=>{
+    console.log(e)
+    const filteredNote = retrievedObject.filter((item) => item.title !== e);
+    localStorage.setItem('notes', JSON.stringify(filteredNote));
+    window.location.reload()
   }
 
   const history = useNavigate()
 
   return (
-    <Container>
-      <Box sx={{m:2, textAlign:'center'}}>
+    <div>
+      <Navbar></Navbar>
+      <Container>
+      
+      <Box sx={{pt:6,textAlign:'center'}}>
         <Button
         color='primary'
         variant='contained'
@@ -45,5 +49,7 @@ export default function Notes() {
         ))}
       </Grid>
     </Container>
+    </div>
+    
   )
 }

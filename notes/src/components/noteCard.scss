@@ -1,0 +1,33 @@
+.cardHead{
+    .MuiCardHeader{
+        &-title{
+            font-weight: 700;
+            font-family: monospace;
+            letter-spacing: 0.1rem;
+            font-size: 26px;
+            text-transform:capitalize;
+            color: #af6d05;
+        }
+        
+        &-subheader{
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+    
+    
+}   
+.MuiCardContent-root{
+    p{
+        font-size: x-large;
+        color: #af6d05;
+    }
+} 
+.MuiButtonBase-root:hover{
+    background-color: none !important;
+}
+.MuiSvgIcon-root:hover{
+    color: #af6d05;
+    
+}

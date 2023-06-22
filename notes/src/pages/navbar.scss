@@ -1,0 +1,32 @@
+.navbar{
+    position: fixed;
+    z-index: 1;
+    height: 30px;
+    width: 100%;
+    background-color:#c7b595;
+    display: flex;
+    justify-content: flex-end;
+
+    div{
+        padding: 0;
+        
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+
+        a{
+            text-decoration: none;
+            color: #2b344a;
+        }
+        a:hover{
+            color: white;
+            pointer-events: visible;
+        }
+    }
+    .home{
+        margin: 5px 20px;
+    }
+    .create{
+        margin: 5px 100px 5px 50px;
+    }
+}

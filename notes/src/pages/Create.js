@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -7,6 +7,8 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField } from '@mui/material';
 import { makeStyles } from "@mui/styles";
 import Box from '@mui/material/Box';
+import './Create.scss';
+import Navbar from './navbar';
 
 const useStyles = makeStyles({
   field:{
@@ -18,13 +20,34 @@ const useStyles = makeStyles({
 
 export default function Create() {
   const classes= useStyles()
-  const history = useNavigate()
   const [title, setTitle] = useState('')
   const [details, setDetails] = useState('')
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
   const [category, setCategory] = useState('todos')
+  const [notes, setNotes]=useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("notes") === null) {
+      fetch('https://run.mocky.io/v3/bc182351-c11c-483e-88b3-b88b0d689768')
+        .then(res => res.json())
+        .then(data => {
+          const newData=[];
+          data.notes.map((ele)=>{
+            newData.push(ele);
+          })
+          setNotes(newData)
+          console.log(newData);
+        })
+    }else{
+      var retrievedObject = JSON.parse(localStorage.getItem('notes'));
+      setNotes(retrievedObject)
+    }
+    
+  },[]);
+
   const handleSubmit=(e)=>{
+
     e.preventDefault()
     setTitleError(false)
     setDetailsError(false)
@@ -35,23 +58,34 @@ export default function Create() {
       setDetailsError(true)
     }
     if(title && details){
-      fetch('http://localhost:8000/notes', {
-        method: 'POST',
-        headers: {"Content-type": "application/json"},
-        body: JSON.stringify({ title, details, category })
-      }).then(() => history('/'))
+      const newNote ={
+        "title": title,
+        "details": details,
+        "category": category
+      }
+      setNotes(notes => ([
+        ...notes,
+        newNote
+      ]));
+      const dataForProps = [...notes];
+      dataForProps.push(newNote);
+      console.log(dataForProps)
+      localStorage.setItem('notes', JSON.stringify(dataForProps));
+      navigate('/');
     }else{
       alert('Please fill mandatory fields')
     }
   }
+
+    
   return (
-    <Container style={{padding:"0 300px"}}>
-      <Box sx={{ p: 1 , textAlign:'center'}}>
+    <div>
+      <Navbar />
+      <Container style={{padding:"0 300px"}}>
+      <Box sx={{ pt: 6 , textAlign:'center'}}>
         <Typography
           variant='h6'
-          color="textSecondary"
           component="h2"
-          style={{color:'#65C18C', fontSize:30}}
           gutterBottom
         >
           Create a new Note
@@ -111,5 +145,7 @@ export default function Create() {
 
       
     </Container>
+    </div>
+    
   )
 }

@@ -4,12 +4,13 @@ import Create from './pages/Create'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import { Box } from '@mui/material';
+import './App.scss'
 
  const theme = createTheme({
   // palette provided by material UI
   palette:{
     primary:{
-      main:"rgb(50,151,51)"
+      main:"#af6d05"
     },
     secondary: purple
   },
