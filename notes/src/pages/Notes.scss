@@ -1,0 +1,54 @@
+.no-notes {
+    color: #FEE715;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    margin: 100px 100px 0;
+
+    @media screen and (max-width: 425px) {
+        margin: 50px 10px;
+    }
+    
+
+    & ~ .emoji::before{
+        content: "\1F600"; /* Unicode value for a heart */
+        font-size: 5rem; /* set font size */
+        color: red; /* set color */
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+.create-box{
+    padding-top: 70px;
+    text-align: center;
+
+    .create-button{
+        font-weight: 100;
+        font-size: 22px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px;
+        color: white;
+        background: black;
+
+        &:hover{
+            cursor: pointer;
+            color: #ffff00ab;
+        }
+    }
+}
+
+.create-container{
+    background-color:#101820cc;
+    padding-bottom: 20px;
+    height: 100vh;
+
+    @media screen and (max-width: 425px) {
+        height: unset;
+    }
+
+    .css-1s397bm-MuiGrid-root{
+        width: 100% !important;
+    }
+}

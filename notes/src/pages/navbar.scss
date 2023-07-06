@@ -1,32 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .navbar{
     position: fixed;
     z-index: 1;
     height: 30px;
     width: 100%;
-    background-color:#c7b595;
+    background-color:#101820;
     display: flex;
     justify-content: flex-end;
+    padding: 15px 0;    
 
     div{
-        padding: 0;
-        
+        padding: 0; 
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.1rem;
 
+        &:hover{
+            border-bottom: 1px solid yellow;
+            a{
+                color: #FEE715;
+                pointer-events: visible;
+            }
+        }
         a{
             text-decoration: none;
-            color: #2b344a;
-        }
-        a:hover{
             color: white;
-            pointer-events: visible;
         }
     }
     .home{
-        margin: 5px 20px;
+        padding: 5px 20px;
+
+        @media screen and (max-width: 425px) {
+            padding: 5px 10px;
+        }
     }
     .create{
-        margin: 5px 100px 5px 50px;
+        margin: 0 80px 0 30px;
+        padding: 5px 20px;
+
+        @media screen and (max-width: 425px) {
+            margin: 0;
+            padding: 5px 10px 5px 15px;
+        }
+    }
+}
+.logo{
+    font-family: 'Pacifico', cursive !important;
+    position: fixed;
+    color: yellow;
+    z-index: 9;
+    font-size: 32px;
+    padding: 0 50px;
+    display: block;
+
+    @media screen and (max-width: 425px) {
+        font-size: 24px;
+        top: 10px;
+        left: 10px;
+        padding: 0;
+        display: none;
+    }
+
+    &.logoMob{
+        display: none;
+
+        @media screen and (max-width: 425px) {
+            display: block;
+        }
     }
 }

@@ -1,8 +1,44 @@
-.MuiTypography-root.MuiTypography-h6{
-    color: #af6d05;
-    font-size: 30px;
+.MuiTypography-root.MuiTypography-h6 {
+  color: #af6d05;
+  font-size: 30px;
 }
 
 .MuiBox-root .MuiFormControl-root {
-    margin: 0 !important;
+  margin: 0 !important;
+}
+
+.containe{
+    padding: 70px 300px 0;
+
+    @media screen and (max-width: 425px) {
+        padding: 70px 10px 0;
+    }
+}
+.create-button {
+  text-align: center;
+  color: #fee715;
+  font-size: 32px;
+  color: #101820;
+  font-weight: bolder;
+}
+
+input {
+  border: 1px solid #fee715;
+
+  &:hover {
+    border: unset;
+  }
+}
+form{
+    padding: 0 25%;
+
+    @media screen and (max-width: 425px) {
+        padding: unset;
+    }
+}
+
+.Note-container {
+  .navbar {
+    background: #101820cf;
+  }
 }

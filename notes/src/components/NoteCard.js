@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, IconButton, Typography } from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { grey } from '@mui/material/colors';
 import './noteCard.scss'
 
 export default function NoteCard({ note, handleDelete}) {
@@ -10,12 +9,12 @@ export default function NoteCard({ note, handleDelete}) {
       <Card elevation={1}>
         <CardHeader
           action={
-            <IconButton onClick={() => handleDelete(note.title)}>
+            <IconButton className="deleteIcon" onClick={() => handleDelete(note.title)}>
               <DeleteOutlineIcon />
             </IconButton>
           }
           title={note.title}
-          style={{background:'#7FB77E'}}
+          style={{background:'rgb(47 62 74 / 81%)'}}
           subheader={`category - ${note.category}`}
           className='cardHead'
         />

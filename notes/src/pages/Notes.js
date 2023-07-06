@@ -1,13 +1,13 @@
-import { Box, Button, Container, Grid } from '@mui/material';
-import React, { useEffect, useState } from 'react'
-import NoteCard from '../components/NoteCard'
+import { Container, Grid } from '@mui/material';
+import React from 'react';
+import NoteCard from '../components/NoteCard';
 import { useNavigate } from 'react-router-dom';
-import Navbar from './navbar.js'
+import Navbar from './navbar.js';
+import './Notes.scss';
 
 export default function Notes() {
   let notes = [];
   var retrievedObject = JSON.parse(localStorage.getItem('notes'));
-
   if(localStorage.getItem("notes") !== null){
     notes=[...retrievedObject]
   }else{
@@ -24,32 +24,30 @@ export default function Notes() {
   const history = useNavigate()
 
   return (
-    <div>
+    <div className='create-container'>
       <Navbar></Navbar>
       <Container>
-      
-      <Box sx={{pt:6,textAlign:'center'}}>
-        <Button
-        color='primary'
-        variant='contained'
+      <div className='create-box'>
+        <button
+        className='create-button'
         onClick={()=>{history('/create')}}
         >
         Create new Note
-        </Button>
-      </Box>
-      
-      {/* <button
-        
-      ></button> */}
-      <Grid container spacing={3} m={1}>
-        {notes.map(note => (
-          <Grid item xs={12} md={6} lg={4} key={note.id}>
-            <NoteCard note={note} handleDelete={handleDelete} />
-          </Grid>
-        ))}
-      </Grid>
+        </button>
+      </div>
+      {notes.length ? 
+        <Grid container spacing={3} m={1}>
+          {notes.map(note => (
+            <Grid item xs={10} md={4} lg={4} key={note.id}>
+              <NoteCard note={note} handleDelete={handleDelete} />
+            </Grid>
+          ))}
+        </Grid>
+      : (<div><div className='no-notes'>
+          Start with your first NOTE, You will LOVE it...!
+        </div><div className='emoji'></div></div>) 
+      }      
     </Container>
     </div>
-    
   )
 }

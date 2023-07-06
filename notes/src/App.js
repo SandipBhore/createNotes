@@ -3,11 +3,9 @@ import Notes from './pages/Notes'
 import Create from './pages/Create'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
-import { Box } from '@mui/material';
 import './App.scss'
 
  const theme = createTheme({
-  // palette provided by material UI
   palette:{
     primary:{
       main:"#af6d05"
@@ -24,7 +22,6 @@ import './App.scss'
 })
 function App() {
   return (
-    // <Box sx={{ml:2, mr:2}}>
      <ThemeProvider theme={theme}>
       <Router>
         <Routes>
@@ -37,7 +34,6 @@ function App() {
         </Routes>
       </Router>
      </ThemeProvider>
-    //  </Box>
   );
 }
 

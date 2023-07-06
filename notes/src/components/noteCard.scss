@@ -6,7 +6,7 @@
             letter-spacing: 0.1rem;
             font-size: 26px;
             text-transform:capitalize;
-            color: #af6d05;
+            color:#FEE715;
         }
         
         &-subheader{
@@ -21,13 +21,47 @@
 .MuiCardContent-root{
     p{
         font-size: x-large;
-        color: #af6d05;
+        color: #101820;
     }
 } 
 .MuiButtonBase-root:hover{
     background-color: none !important;
 }
-.MuiSvgIcon-root:hover{
-    color: #af6d05;
+// .MuiSvgIcon-root:hover{
+//     color: #af6d05;
+// }
+.deleteIcon{
+    svg.css-i4bv87-MuiSvgIcon-root{
+        color: navajowhite;
+        font-size: 30px !important;
+        transition: margin-top 1s;
+        
+    }
     
+    svg.css-i4bv87-MuiSvgIcon-root:hover{
+        // animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        // transform: translate3d(0, 0, 0);
+        // backface-visibility: hidden;
+        // perspective: 1000px;
+        margin-top: -10px;
+    }
 }
+
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
