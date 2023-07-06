@@ -13,6 +13,7 @@
             font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
+            color: white;
         }
     }
     
@@ -27,18 +28,15 @@
 .MuiButtonBase-root:hover{
     background-color: none !important;
 }
-// .MuiSvgIcon-root:hover{
-//     color: #af6d05;
-// }
 .deleteIcon{
-    svg.css-i4bv87-MuiSvgIcon-root{
+    svg{
         color: navajowhite;
         font-size: 30px !important;
         transition: margin-top 1s;
         
     }
     
-    svg.css-i4bv87-MuiSvgIcon-root:hover{
+    svg:hover{
         // animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
         // transform: translate3d(0, 0, 0);
         // backface-visibility: hidden;

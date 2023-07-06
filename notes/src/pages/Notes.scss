@@ -12,8 +12,8 @@
 
     & ~ .emoji::before{
         content: "\1F600"; /* Unicode value for a heart */
-        font-size: 5rem; /* set font size */
-        color: red; /* set color */
+        font-size: 5rem;
+        color: red;
         display: flex;
         justify-content: center;
         margin-top: 15px;
@@ -42,13 +42,15 @@
 .create-container{
     background-color:#101820cc;
     padding-bottom: 20px;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
 
     @media screen and (max-width: 425px) {
         height: unset;
+        min-height: 100vh;
     }
 
-    .css-1s397bm-MuiGrid-root{
+    .MuiGrid-spacing-xs-3{
         width: 100% !important;
     }
 }
